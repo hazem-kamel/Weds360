@@ -5,23 +5,20 @@ import styled from 'styled-components'
 const StyledPagination = styled.nav`
   display: block;
   text-align: center;
+
+  @media(max-width:767px){
+      
+  }
 `
-
 const StyledPaginationUL=styled.ul`
-
  padding-bottom: 40px;
   display: inline-block;
   padding-left: 0;
   margin: 20px 0;
   border-radius: 4px;
-
 `
 const StyledPaginationIL=styled.li`
-height:36px;
 display: inline;
-
-
-
 `
 const StyledPaginationButton = styled.button`
 position: relative;
@@ -49,7 +46,6 @@ position: relative;
 `
 const StyledPaginationNext = styled.button`
 width:73px;
-
 position: relative;
     float: left;
     padding: 6px 12px;
@@ -59,42 +55,31 @@ position: relative;
     background-color: #fff;
     border: 1px solid #ddd;
     margin-left: -1px;
-
-    
 `
+const Pagination = (props) => {
 
+    const pageNumbers=[];
 
-const Pagination = props => {
+    for(let i=1; i<=Math.ceil(props.totalPosts/props.postsPerPage); i++) {
+        pageNumbers.push(i);
+    }
+
     return(
+
         <StyledPagination>
-
         <StyledPaginationUL>
-
         <StyledPaginationPrevious>
-
-        Previous
+        <a href='/'>Previous</a>
         </StyledPaginationPrevious>
-
         <StyledPaginationIL>
-        <StyledPaginationButton>1</StyledPaginationButton>
-        <StyledPaginationButton>1</StyledPaginationButton>
-        <StyledPaginationButton>1</StyledPaginationButton>
-        <StyledPaginationButton>1</StyledPaginationButton>
-        <StyledPaginationButton>1</StyledPaginationButton>
-
-
+        {pageNumbers.map(number=><StyledPaginationButton onClick={()=> props.paginate(number)}>{number}</StyledPaginationButton>)}
         </StyledPaginationIL>
-
         <StyledPaginationNext>
          Next
         </StyledPaginationNext>
-
         </StyledPaginationUL>
-       
-
         </StyledPagination>
     )
 }
-
 export default Pagination;
 

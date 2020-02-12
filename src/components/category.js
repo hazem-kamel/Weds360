@@ -1,4 +1,4 @@
-import React , {useEffect} from 'react';
+import React , {useState,useEffect} from 'react';
 import styled from "styled-components";
 import Search from '../components/searchbar';
 import Pagination from '../components/pagination';
@@ -7,6 +7,9 @@ import {fetchImages} from '../redux/actions/Actions';
 import { useHistory } from "react-router-dom";
 
 const StyledCategory=styled.div`
+  @media(max-width:767px){
+      
+    }
 
 `
 const StyledCategorySection=styled.div`
@@ -29,11 +32,16 @@ h3{
 }
 `
 const Category = props => {
+    const [currentPage,setCurrentPage]=useState(1);
+    const [postsPerPage]=useState(9);
+
     useEffect( () => {props.getCategoryElements()},[props.categoryElements.length])
     const history = useHistory();
     const navigate = imageId => {
     history.push("/photo/" + imageId);
       }
+      const indexOfLast=currentPage * postsPerPage;
+  
     return(
     <StyledCategory>
     <StyledCategorySection>

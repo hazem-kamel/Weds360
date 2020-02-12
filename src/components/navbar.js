@@ -1,87 +1,83 @@
 import React from 'react'
 import styled from "styled-components";
 
+const DesktopNavBar=styled.div `
+   
+    padding-top:30px;
+    display: flex;
+    margin: 0 120px;
+    position: relative;
 
-
-
-const DesktopNavBar=styled.nav `
-    width: 100%;
-    margin-left: auto ;
-    margin-right: auto ;
-
-    .nav-links{
-  list-style-type: none;
-  margin: 60px;
-  padding: 0;
-  overflow: hidden;
+    img {
+        width: 100px;
+        height: 100%;
+        margin: 0 20px;
     }
-
-    .logo{
-        width:90px;
-        margin-left:30px;
-
-        
-    }
-
 `
 
-const Styledil=styled.li `
-    float:left;
-    margin:30px;
 
-    &.planner-drop:hover .planners-drop{
-        display:block
+const StyledNav=styled.div`
+       float:left;
+        width:100%;
+        height:100%;
+        margin-bottom:10px;
+        display:flex;
+        border-top: solid 1px #000;
+        border-bottom: solid 1px #000;
+        padding: 0 15px;
+        align-self: flex-end;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        line-height: 1.428571429;
+        color: #333333;
+        li{
+            text-align: center;
+            margin: 0 15px;
+            white-space: nowrap;
+            display: list-item;
+        }
+        li:first-child:hover {
+            .dropMenu {
+                display: block;
+            }
+        }
+        
+        ul{
+        list-style:none;
+        display:inline-flex;
+        
     }
-    .planners-drop{
+`
+
+const StyledDropMenu=styled.div`
         display:none;
         background-color: white;
-        max-width: 100px;
-        position: relative;
-        height:100%;
+        position: absolute;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        
-    }
-    &:nth-child(5) , &:nth-child(6)  , &:nth-child(7){
-
-        float:right;
-
-    
-
-    }
-    &:nth-child(1) , &:nth-child(2)  , &:nth-child(3) , &:nth-child(4){
-
-        float:left;
-}
-
- 
+        top: 100%;
+        left: 0;
 `
-
-const StyledDropPlanner=styled.a`
-
-
-text-align:left;
-padding:10px;
-margin:10px;
-font-size:12px;
-
-font-weight:bold;
-
-
-display: inline-block;
-color:Black;
-
-`
+    const StyledDropPlanner=styled.a`
+        display: block;
+        text-align:left;
+        padding:10px;
+        margin:10px;
+        font-size:12px;
+        font-weight:bold;
+        color:Black;
+    `
 
 
  const NavBar = props => {
      return(
         <DesktopNavBar>
 
+        <StyledNav>
         <ul className='nav-links'>
+        <li  className='planner-drop'>360 PLANNER
 
-        <Styledil  className='planner-drop'>360 PLANNER
-
-        <div className='planners-drop'>
+        <StyledDropMenu className='dropMenu'>
         <StyledDropPlanner href='' >CHECKLIST</StyledDropPlanner>
         <StyledDropPlanner href='' >BUDGETER</StyledDropPlanner>
         <StyledDropPlanner href='' >REGISTERY LIST</StyledDropPlanner>
@@ -89,21 +85,23 @@ color:Black;
         <StyledDropPlanner href='' >WEDDING WEBSITE</StyledDropPlanner>
         <StyledDropPlanner href='' >COUPLE WEBSITE</StyledDropPlanner>
         <StyledDropPlanner href='' >MORE</StyledDropPlanner>
-
-        </div>
-        </Styledil>
-
-        <Styledil className=''>HER </Styledil>
-        <Styledil className=''>HIM </Styledil>
-        <Styledil className=''>THE WEDDING</Styledil>
-        <Styledil className=''>VENDORS</Styledil>
-        <Styledil className=''>GALLERY</Styledil>
-        <Styledil className=''>IDEAS&MORE</Styledil>
-
-        <img className='logo' src='https://weds360.com/assets/logo-a44ab28137d9c6c366386172e63d31ba35dfd616b594a0b39e1f5d45a3130973.png' alt='logo'></img>
-
-
+        </StyledDropMenu>
+        </li>
+        <li className=''>HER </li>
+        <li className=''>HIM </li>
+        <li className=''>THE WEDDING</li>
         </ul>
+        </StyledNav>
+        <img className='logo' src='https://weds360.com/assets/logo-a44ab28137d9c6c366386172e63d31ba35dfd616b594a0b39e1f5d45a3130973.png'></img>
+       
+        <StyledNav>
+        <ul>
+        <li className=''>VENDORS</li>
+        <li className=''>GALLERY</li>
+        <li className=''>IDEAS&MORE</li>
+        </ul>
+        </StyledNav>
+        
          </DesktopNavBar>
 
      );

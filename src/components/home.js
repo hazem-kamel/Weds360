@@ -1,14 +1,17 @@
-import React , {useState, useEffect} from 'react';
+import React , {useEffect} from 'react';
 import styled from "styled-components";
 import Search from '../components/searchbar'
 import Pagination from '../components/pagination'
+import {fetchImages} from '../redux/actions/Actions';
 import { connect } from "react-redux";
-import GETALL from '../redux/actions/actionTypes'
+import { useHistory } from "react-router-dom";
+
 const StyledHomePage=styled.div`
 `
 const StyledHomePageSection=styled.div`
 display:grid;
 grid-template-columns:25% 75%;
+grid-column-gap:50px;
 `
 
 const StyledGallery=styled.div`
@@ -24,72 +27,39 @@ img{
     height:230px;
 }
 h3{
+    text-align:center;
 }
-
 `
-const HomePage = props => {
-    console.log(props.categories)
+const  HomePage = props => {
+  
+    useEffect( () => {props.getImages()},[props.images.length])
+    console.log(props.images)
+    const history = useHistory();
+    const navigate = imageId => {
+    history.push("/photo/" + imageId);
+      }
     return(
         <StyledHomePage>
         <StyledHomePageSection>
-                    <Search className='SearchSection'/>
+            <Search className='SearchSection'/>
 
             <StyledGallery>
-
-            <div>
-                <img src='https://weds360-production.s3.eu-west-1.amazonaws.com/store/photo/397/src/large-3bf72dfd0138f42994becb65f8d26811.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3XIBZMGBAF2YAFWK%2F20200207%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200207T191104Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=7adf373848b7f8968e6b26cbbd8fcb1b1b70ad64088c41ae15c79e83700a3d3e' alt='example'></img>
-                <h3>Name </h3>
+            {props.images.map((image,i) => (
+                <div  photo_id={image.id} key={i} onClick={()=>navigate(image.id)}>
+                <img src={process.env.PUBLIC_URL + String(image.img).slice(7) } alt={image.title}></img>
+                <h3>{image.title}</h3>
                 </div>
-                <div>
-                <img src='https://weds360-production.s3.eu-west-1.amazonaws.com/store/photo/397/src/large-3bf72dfd0138f42994becb65f8d26811.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3XIBZMGBAF2YAFWK%2F20200207%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200207T191104Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=7adf373848b7f8968e6b26cbbd8fcb1b1b70ad64088c41ae15c79e83700a3d3e' alt='example'></img>
-                <h3>Name </h3>
-                </div>
-                <div>
-                <img src='https://weds360-production.s3.eu-west-1.amazonaws.com/store/photo/397/src/large-3bf72dfd0138f42994becb65f8d26811.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3XIBZMGBAF2YAFWK%2F20200207%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200207T191104Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=7adf373848b7f8968e6b26cbbd8fcb1b1b70ad64088c41ae15c79e83700a3d3e' alt='example'></img>
-                <h3>Name </h3>
-                </div>
-                <div>
-                <img src='https://weds360-production.s3.eu-west-1.amazonaws.com/store/photo/397/src/large-3bf72dfd0138f42994becb65f8d26811.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3XIBZMGBAF2YAFWK%2F20200207%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200207T191104Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=7adf373848b7f8968e6b26cbbd8fcb1b1b70ad64088c41ae15c79e83700a3d3e' alt='example'></img>
-                <h3>Name </h3>
-                </div>
-                <div>
-                <img src='https://weds360-production.s3.eu-west-1.amazonaws.com/store/photo/397/src/large-3bf72dfd0138f42994becb65f8d26811.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3XIBZMGBAF2YAFWK%2F20200207%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200207T191104Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=7adf373848b7f8968e6b26cbbd8fcb1b1b70ad64088c41ae15c79e83700a3d3e' alt='example'></img>
-                <h3>Name </h3>
-                </div>
-                <div>
-                <img src='https://weds360-production.s3.eu-west-1.amazonaws.com/store/photo/397/src/large-3bf72dfd0138f42994becb65f8d26811.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3XIBZMGBAF2YAFWK%2F20200207%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200207T191104Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=7adf373848b7f8968e6b26cbbd8fcb1b1b70ad64088c41ae15c79e83700a3d3e' alt='example'></img>
-                <h3>Name </h3>
-                </div>
-                <div>
-                <img src='https://weds360-production.s3.eu-west-1.amazonaws.com/store/photo/397/src/large-3bf72dfd0138f42994becb65f8d26811.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3XIBZMGBAF2YAFWK%2F20200207%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200207T191104Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=7adf373848b7f8968e6b26cbbd8fcb1b1b70ad64088c41ae15c79e83700a3d3e' alt='example'></img>
-                <h3>Name </h3>
-                </div>
-                <div>
-                <img src='https://weds360-production.s3.eu-west-1.amazonaws.com/store/photo/397/src/large-3bf72dfd0138f42994becb65f8d26811.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3XIBZMGBAF2YAFWK%2F20200207%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200207T191104Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=7adf373848b7f8968e6b26cbbd8fcb1b1b70ad64088c41ae15c79e83700a3d3e' alt='example'></img>
-                <h3>Name </h3>
-                </div>
-                <div>
-                <img src='https://weds360-production.s3.eu-west-1.amazonaws.com/store/photo/397/src/large-3bf72dfd0138f42994becb65f8d26811.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3XIBZMGBAF2YAFWK%2F20200207%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200207T191104Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=7adf373848b7f8968e6b26cbbd8fcb1b1b70ad64088c41ae15c79e83700a3d3e' alt='example'></img>
-                <h3>Name </h3>
-                </div>
-              
+            ))
+            }
             </StyledGallery>
-
-
         </StyledHomePageSection>
         <Pagination/>
-
 </StyledHomePage>
-    )
-}
-const mapStateToProps = state => {
-    return {
-     categories: state.categories
-    };
-  };
-  const mapDispatchToProps = dispatch => {
-    return {
-    
-    };
-  };
-export default connect(mapStateToProps,mapDispatchToProps)(HomePage)
+    )}
+    const mapStateToProps = state => ({
+        images:state.images
+    })
+    const mapDispatchToProps = dispatch =>({
+        getImages: () => dispatch(fetchImages())
+    })
+export default connect(mapStateToProps,mapDispatchToProps)(HomePage);

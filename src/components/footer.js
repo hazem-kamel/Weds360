@@ -2,13 +2,13 @@ import React from 'react';
 import styled from "styled-components";
 
 const StyledBottom=styled.div`
- margin: 0;
+    margin: 0;
     padding: 0;
     
 `
 
 const StyledBottomSection =styled.div`
-margin-right: auto;
+    margin-right: auto;
     margin-left: auto;
     padding: 0;
     padding-left: 15px;
@@ -16,6 +16,7 @@ margin-right: auto;
     margin-top: 100px;
     max-width: 1100px;
     position: relative;
+
 
 
 h3{
@@ -80,14 +81,13 @@ a{
 `
 
 const StyledFooter = styled.footer`
-display: flex;
-  flex-flow: row nowrap; /* Align on the same line */
+  display: flex;
+  flex-flow: row nowrap;
   justify-content: space-between;  
   margin-top:60px;
-  bottom: 0;
+  position:absolute;
   left:0;
   width:100%;
-  position:fixed;
   background-color:black;
   color:white;
 
@@ -122,6 +122,7 @@ display: flex;
 const Footer = props => {
     return(
         <StyledBottom>
+
         <StyledBottomSection>
         <h3>Wedding Planning is a piece of cake with Weds360.We know what matters most and you can count on us every step of the way.</h3>
 
@@ -132,7 +133,7 @@ const Footer = props => {
             <h4>WEDDING WEBSITE</h4>
             <p>Where you will save all your wedding memories forever, where you will choose your own personalized template, manage every event detail and let your guests share their pictures, videos and moments with you.
             </p>
-            <a href=''>Create your website</a>
+            <a href='s'>Create your website</a>
         </div>
         <div className='Budgeter'>
             <img src='https://weds360.com/assets/icons/tools-budgeter-ec7fc844bc691fe93aedce93cd23271a5a78c914f01a9a125001be262182a4e7.png' alt='Budgeter'>
@@ -182,8 +183,8 @@ const Footer = props => {
 
         <StyledFooter>
         <div className='left-footer'>  <h1>Weds360</h1>
-            <a><i class="fab fa-facebook-f"></i></a>
-            <a><i class="fab fa-instagram"></i></a>
+            <a><i className="fab fa-facebook-f"></i></a>
+            <a><i className="fab fa-instagram"></i></a>
            
             </div>
 

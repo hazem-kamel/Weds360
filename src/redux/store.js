@@ -1,7 +1,13 @@
-import React from "react";
 import { createStore, applyMiddleware } from "redux";
+import createSagaMiddleware from 'redux-saga';
 import rootReducer from './RootReducer'
-
-const store = createStore(rootReducer, applyMiddleware());
-
+import {watchFetchImages} from '../middleware/saga';
+import thunk from 'redux-thunk'
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(
+    rootReducer,
+    applyMiddleware(thunk,sagaMiddleware)
+  );
+  sagaMiddleware.run(watchFetchImages);
 export default store;
+

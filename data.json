@@ -1,5 +1,5 @@
 {
-    "categories": [
+    "all_categories": [
         {
             "id": 4,
             "title": "Wedding Ideas",
@@ -13,44 +13,37 @@
         },
 
  		{
-            "id": 19,
+            "id": 6,
             "title": "CATERERS",
             "img": "/public/images/6/Baron_Palace.png"
         }
     ],
-     "images": [
+     "all_images": [
         {
         	"categoryId": 4,
             "id": 397,
-            "img": "/public/images/4/wedding_details_397.png",
+            "img": "/public/images/4/wedding397.png",
             "title": "Wedding details",
             "description": "Bits and pieces of the wedding's bigger picture.",
-            "details": {
-                "href": "https://weds360.com/en/services/151",
-                "name": "Al Khardawaty"
-            }
+            "name": "Al Khardawaty"
+            
         },
         {
             "categoryId": 4,
             "id": 396,
-            "img": "/public/images/4/gold_frame_invitation_set_395.png",
+            "img": "/public/images/4/gold.png",
             "title": "Gold/marble wedding cake",
             "description": "Two tire gold/marble wedding cake with peach sugar flowers decoration and topper.",
-            "details": {
-                "href": "https://weds360.com/en/services/89",
-                "name": "Salsabella cake studio"
-            }
+            "name": "Salsabella cake studio"
         },
         {
             "categoryId": 4,
             "id": 395,
-            "img": "/public/images/4/goldmarble_wedding_cake_396.png",
+            "img": "/public/images/4/goldmarble.png",
             "title": "Gold frame Invitation set",
             "description": "Delicate gold frame, wax stamped floral wedding invitation set.",
-            "details": {
-                "href": "https://weds360.com/en/services/202",
-                "name": "White Yard"
-            }
+            "name": "White Yard"
+
         },
         {
             "categoryId": 4,
@@ -58,43 +51,34 @@
             "img": "/public/images/4/beating_hearts_394.png",
             "title": "Beating hearts",
             "description": "Scattered tiny hearts mean much love for the bride and groom.",
-            "details": {
-                "href": "https://weds360.com/en/services/151",
-                "name": "Al Khardawaty"
-            }
+            "name": "Al Khardawaty"
+
         },
         {
             "categoryId": 4,
             "id": 393,
-            "img": "/public/images/4/wedding_details_397.png",
+            "img": "/public/images/4/wedding397.png",
             "title": "Peach wonderland",
             "description": "Majestic ambiance created with faint orange lighting, thousands of tiny white blossoms, and a piano.",
-            "details": {
-                "href": "https://weds360.com/en/services/163",
-                "name": "The Lounge"
-            }
+            "name": "The Lounge"
         },
         {
             "categoryId": 4,
             "id": 392,
-            "img": "/public/images/4/goldmarble_wedding_cake_396.png",
+            "img": "/public/images/4/goldmarble.png",
             "title": "White and silver Cake",
             "description": "Two-leveled wedding cake decorated with colorful roses.",
-            "details": {
-                "href": "https://weds360.com/en/services/86",
-                "name": "Whipped Gourmet Cakery"
-            }
+            "name": "Whipped Gourmet Cakery"
+
         },
         {
             "categoryId": 4,
             "id": 391,
-            "img": "/public/images/4/gold_frame_invitation_set_395.png",
+            "img": "/public/images/4/gold.png",
             "title": "Wooden guestbook",
             "description": "Wood tree slice for a novel wedding guestbook idea.",
-            "details": {
-                "href": "https://weds360.com/en/services/151",
-                "name": "Al Khardawaty"
-            }
+            "name": "Al Khardawaty"
+
         },
         {
             "categoryId": 4,
@@ -102,32 +86,23 @@
             "img": "/public/images/4/beating_hearts_394.png",
             "title": "Love is in the air",
             "description": "Bring an outdoor feel to your indoor wedding by adding that floral touch.",
-            "details": {
-                "href": "https://weds360.com/en/services/163",
-                "name": "The Lounge"
-            }
+            "name": "The Lounge"
         },
         {
             "categoryId": 4,
             "id": 389,
-            "img": "/public/images/4/goldmarble_wedding_cake_396.png",
+            "img": "/public/images/4/goldmarble.png",
             "title": "The flower tower",
             "description": "A flower tower made out of white roses for a wedding centerpiece.",
-            "details": {
-                "href": "https://weds360.com/en/services/75",
-                "name": "Daisy Flower"
-            }
+            "name": "Daisy Flower"
         },
         {
             "categoryId": 4,
             "id": 388,
-            "img": "/public/images/4/wedding_details_397.png",
+            "img": "/public/images/4/wedding397.png",
             "title": "The colorful cake",
             "description": "A colorful three-leveled wedding cake dressed up in roses.",
-            "details": {
-                "href": "https://weds360.com/en/services/86",
-                "name": "Whipped Gourmet Cakery"
-            }
+            "name": "Whipped Gourmet Cakery"
         },
         {
             "categoryId": 4,
@@ -135,57 +110,49 @@
             "img": "/public/images/4/beating_hearts_394.png",
             "title": "Leave a message",
             "description": "Leave a message with your warmest wishes for the newlyweds.",
-            "details": {
-                "href": "https://weds360.com/en/services/152",
-                "name": "Al Khardawaty"
-            }
+            "name": "Al Khardawaty"
         },
         {
             "categoryId": 4,
             "id": 386,
-            "img": "/public/images/4/gold_frame_invitation_set_395.png",
+            "img": "/public/images/6/Baron_Palace.png",
             "title": "The sky is falling",
             "description": "The moody color palette, sheer black curtains, and sleek seats all shout out modern/alternative. While the hanging delicate flowers, illuminated golden tear drops, and chandeliers give a more classic touch.",
-            "details": {
-                "href": "https://weds360.com/en/services/65",
-                "name": "Victoria’s wedding"
-            }
+            "name": "Victoria’s wedding"
         },
         {
             "categoryId": 4,
             "id": 385,
-            "img": "/public/images/4/goldmarble_wedding_cake_396.png",
+            "img": "/public/images/4/goldmarble.png",
             "title": "Modern wedding theme",
             "description": "Modern with a traditional touch wedding decor and ambiance.",
-            "details": {
-                "href": "https://weds360.com/en/services/283",
-                "name": "L.A Weddings by Lotfy Abdel Aziz"
-            }
+            "name": "L.A Weddings by Lotfy Abdel Aziz"
         },
         {
             "categoryId": 4,
             "id": 383,
-            "img": "/public/images/4/wedding_details_397.png",
+            "img": "/public/images/6/Baron_Palace.png",
             "title": "Wedding postcard guestbook",
             "description": "Write down a wedding wish to the newlyweds on a postcard-themed guestbook.",
-            "details": {
-                "href": "https://weds360.com/en/services/152",
-                "name": "Al Khardawaty"
-            }
+            "name": "Al Khardawaty"
         },{
         	"categoryId":5,
         	"id":297,
             "img": "/public/images/5/The_Caterer.png",
         	"title":"CHEZ REMI",
-        	"description":"Lebanese Caterer for all kinds of Lebanese cuisine varieties and in addition, she is a Canapés and Finger food specialist.  "
+            "description":"Lebanese Caterer for all kinds of Lebanese cuisine varieties and in addition, she is a Canapés and Finger food specialist.  ",
+            "name": "Al Khardawaty"
+
 
         }
         ,{
         	"categoryId":5,
         	"id":340,
-            "img": "/public/images/5/Umai.png",
+            "img": "/public/images/5/Umai.jpeg",
         	"title":"Umai",
-        	"description":"Umai is a movement towards food appreciation. Gourmet Catering for all types of events, Umai offers finger food, buffet fine dining, live stations, and dessert bars."
+            "description":"Umai is a movement towards food appreciation. Gourmet Catering for all types of events, Umai offers finger food, buffet fine dining, live stations, and dessert bars.",
+            "name": "Al Khardawaty"
+
 
         }
         ,{
@@ -193,26 +160,34 @@
         	"id":119,
             "img": "/public/images/5/Diva.png",
         	"title":"DIVA CATERING",
-        	"description":"DIVA is a full catering service and event planning company dedicated to providing you with exquisite cuisines and fantastic customer service.We offer a variety of menus and design options for everything from high tea, canapé buffet to full-on set menus, open buffets, and live stations.DIVA gives its customers a simple delivery solution at budget-friendly pricing. We will be happy to assist you at any time with placing food and beverage orders"
+            "description":"DIVA is a full catering service and event planning company dedicated to providing you with exquisite cuisines and fantastic customer service.We offer a variety of menus and design options for everything from high tea, canapé buffet to full-on set menus, open buffets, and live stations.DIVA gives its customers a simple delivery solution at budget-friendly pricing. We will be happy to assist you at any time with placing food and beverage orders",
+            "name": "Al Khardawaty"
+
         }
          ,{
         	"categoryId":6,
         	"id":249,
             "img": "/public/images/6/Baron_Palace.png",
         	"title":"BARON EMPAIN PALACE",
-        	"description":"The Baron Empain Palace, better known as Le Palais Hindu or The Baron Palace is a distinctive and historic Indian-inspired mansion in Heliopolis, Cairo, Egypt.This is where you can have an extraordinary wedding in the palace's garden that can welcome up to 500 guests."
+            "description":"The Baron Empain Palace, better known as Le Palais Hindu or The Baron Palace is a distinctive and historic Indian-inspired mansion in Heliopolis, Cairo, Egypt.This is where you can have an extraordinary wedding in the palace's garden that can welcome up to 500 guests.",
+            "name": "Al Khardawaty"
+
         },{
         	"categoryId":6,
         	"id":251,
-            "img": "/public/images/5/Prince_Palace.png",
+            "img": "/public/images/6/Prince_Palace.png",
         	"title":"PRINCE MUHAMMAD ALI PALACE",
-        	"description":"Prince Muhammad Ali Palace or better known as The Manial Palace and Museum is a former Alawiyya dynasty era palace and grounds on Rhoda Island on the Nile located in El-Manial district. The palace was built in 1901 as a rest area for the prince and because of its architectural style inspired by different eras like the Fatimid, Mamluk, Ottoman, Andalusian, Persian, and Shami, it was converted in 2015 into a public museum.The golden hall and the palace's garden is where you can have your royal wedding with up to 300 guests."
+            "description":"Prince Muhammad Ali Palace or better known as The Manial Palace and Museum is a former Alawiyya dynasty era palace and grounds on Rhoda Island on the Nile located in El-Manial district. The palace was built in 1901 as a rest area for the prince and because of its architectural style inspired by different eras like the Fatimid, Mamluk, Ottoman, Andalusian, Persian, and Shami, it was converted in 2015 into a public museum.The golden hall and the palace's garden is where you can have your royal wedding with up to 300 guests.",
+            "name": "Al Khardawaty"
+
         },{
         	"categoryId":6,
         	"id":306,
-            "img": "/public/images/5/Heave7n.png",
+            "img": "/public/images/6/Heave7n.png",
         	"title":"heave7n",
-        	"description":"More than 10 years experience.Wedding planning, Interior design, Gardens and balcony design, Decorations, Flowers.We are passionate about awesome venues and amazing events! Your idyllic destination for special celebrations, weddings  & events.Floral designer, event styling and theming, we believe in simplicity and sustainability."
+            "description":"More than 10 years experience.Wedding planning, Interior design, Gardens and balcony design, Decorations, Flowers.We are passionate about awesome venues and amazing events! Your idyllic destination for special celebrations, weddings  & events.Floral designer, event styling and theming, we believe in simplicity and sustainability.",
+            "name": "Al Khardawaty"
+
         }
 ]
 }

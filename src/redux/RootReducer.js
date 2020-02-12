@@ -1,13 +1,14 @@
-import { GETALL } from "../redux/actions/actionTypes"
-
+import { GetCategories , GetImages } from "../redux/actions/actionTypes"
 const initialState = {
-    categories: []
+    categories: [],
+    images:[]
 };
-
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-        case GETALL:
-            return {...state, categories: action.payload}
+        case GetCategories:
+            return {...state, categories:action.payload}
+        case GetImages:
+            return{...state,images:action.payload}
         default:
         return state;
     }

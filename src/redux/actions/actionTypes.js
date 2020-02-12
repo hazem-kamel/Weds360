@@ -1,1 +1,2 @@
-export const GETALL = "GETALL";
+export const GetCategories = "GetCategories";
+export const GetImages = "GetImages";

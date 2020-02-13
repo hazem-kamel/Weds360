@@ -6,15 +6,40 @@ import { fetchImages } from "../redux/actions/Actions";
 const StyledDiv = styled.div`
   display: inline-flex;
   margin: 50px 120px;
+  @media (max-width: 767px) {
+    display: inline;
+    margin: 30px 30px;
+  }
 `;
 
 const StyledImage = styled.img`
   width: 50%;
   height: auto;
+  @media (max-width: 767px) {
+    width: 85%;
+    margin-top: 60px;
+    margin-right: 7px;
+    height: 300px;
+  }
 `;
 
 const StyledDescription = styled.div`
   padding: 0 25px;
+  @media (max-width: 767px) {
+    .a {
+      margin-block-start: 0em;
+      margin-block-end: 0em;
+      margin-bottom: 5px;
+    }
+    .h5 {
+      margin-block-start: 0px;
+      margin-block-end: 0px;
+      margin-bottom: 5px;
+    }
+    .h2 {
+      margin-bottom: 5px;
+    }
+  }
 
   h2 {
     margin: 0;

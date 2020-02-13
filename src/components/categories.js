@@ -14,6 +14,7 @@ const MainStyledCategories = styled.div`
 const StyledCategories = styled.div`
   position: relative;
   margin: 5px;
+  cursor: pointer;
 `;
 const StyledCategoriesSection = styled.div`
   position: absolute;

@@ -5,7 +5,6 @@ import Pagination from "../components/pagination";
 import { connect } from "react-redux";
 import { fetchImages } from "../redux/actions/Actions";
 import { useHistory } from "react-router-dom";
-
 const StyledCategory = styled.div`
   @media (max-width: 767px) {
   }
@@ -29,12 +28,12 @@ const StyledGallery = styled.div`
   h3 {
   }
 `;
-const Category = props => {
+const Category = (props) => {
   useEffect(() => {
     props.getCategoryElements();
   }, [props.categoryElements.length]);
   const history = useHistory();
-  const navigate = imageId => {
+  const navigate = (imageId) => {
     history.push("/photo/" + imageId);
   };
   return (
@@ -44,7 +43,7 @@ const Category = props => {
         <StyledGallery>
           {props.categoryElements
             .filter(
-              image =>
+              (image) =>
                 image.categoryId === parseInt(props.match.params.category_id)
             )
             .map((image, i) => (
@@ -66,10 +65,10 @@ const Category = props => {
     </StyledCategory>
   );
 };
-const mapStateToProps = state => ({
-  categoryElements: state.images
+const mapStateToProps = (state) => ({
+  categoryElements: state.images,
 });
-const mapDispatchToProps = dispatch => ({
-  getCategoryElements: () => dispatch(fetchImages())
+const mapDispatchToProps = (dispatch) => ({
+  getCategoryElements: () => dispatch(fetchImages()),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Category);

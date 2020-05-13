@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-
 const StyledPagination = styled.nav`
   display: block;
   text-align: center;
-
   @media (max-width: 767px) {
   }
 `;
@@ -56,12 +54,11 @@ const StyledPaginationNext = styled.button`
   margin-left: -1px;
   cursor: pointer;
 `;
-const Pagination = props => {
+const Pagination = (props) => {
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(props.totalPosts / props.postsPerPage); i++) {
     pageNumbers.push(i);
   }
-
   return (
     <StyledPagination>
       <StyledPaginationUL>
@@ -70,9 +67,8 @@ const Pagination = props => {
         >
           Previous
         </StyledPaginationPrevious>
-
         <StyledPaginationIL>
-          {pageNumbers.map(number => (
+          {pageNumbers.map((number) => (
             <StyledPaginationButton
               key={number}
               onClick={() => props.paginate(number)}

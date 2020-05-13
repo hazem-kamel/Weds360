@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-
 const StyledSearch = styled.div`
   max-width: 400px !important;
   margin-top: 30px;
   margin-left: 90px;
   max-width: 100%;
-  @media (max-width: 767px) {
-    margin-left: 30px;
+  @media (max-width: 1016px) {
     margin-bottom: 20px;
+    margin: auto;
+    width: 300px;
   }
 `;
 const StyledButton = styled.button`
@@ -22,7 +22,6 @@ const StyledButton = styled.button`
   display: inline-flex;
   margin-bottom: 10px;
   max-width: 100%;
-
   &.clear {
     background-color: white;
     color: black;
@@ -32,7 +31,6 @@ const StyledButton = styled.button`
     color: white;
   }
 `;
-
 const StyledSearchInput = styled.input`
   width: 100%;
   height: 27px;
@@ -41,8 +39,7 @@ const StyledSearchInput = styled.input`
   margin-top: 20px;
   align-items: center;
 `;
-
-const Search = props => {
+const Search = (props) => {
   return (
     <StyledSearch>
       <StyledButton className="clear"> Clear </StyledButton>

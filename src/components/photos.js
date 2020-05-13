@@ -2,27 +2,24 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { fetchImages } from "../redux/actions/Actions";
-
 const StyledDiv = styled.div`
   display: inline-flex;
   margin: 50px 120px;
   @media (max-width: 767px) {
     display: inline;
     margin: 30px 30px;
+    text-align: center;
   }
 `;
-
 const StyledImage = styled.img`
   width: 50%;
   height: auto;
   @media (max-width: 767px) {
-    width: 85%;
+    width: 80%;
     margin-top: 60px;
-    margin-right: 7px;
     height: 300px;
   }
 `;
-
 const StyledDescription = styled.div`
   padding: 0 25px;
   @media (max-width: 767px) {
@@ -40,7 +37,6 @@ const StyledDescription = styled.div`
       margin-bottom: 5px;
     }
   }
-
   h2 {
     margin: 0;
     margin-bottom: 35px;
@@ -84,17 +80,15 @@ const StyledDescription = styled.div`
     margin: 0 5px;
   }
 `;
-
-const Photos = props => {
+const Photos = (props) => {
   useEffect(() => {
     props.fetchRequestedPhoto();
   }, [props.requestedPhoto.length]);
-
   if (!props.requestedPhoto.length) return null;
   const FilteredImage = props.requestedPhoto.filter(
-    FilteredImage => FilteredImage.id === parseInt(props.match.params.photo_id)
+    (FilteredImage) =>
+      FilteredImage.id === parseInt(props.match.params.photo_id)
   );
-
   return (
     <StyledDiv>
       <StyledImage
@@ -111,10 +105,10 @@ const Photos = props => {
     </StyledDiv>
   );
 };
-const mapStateToProps = state => ({
-  requestedPhoto: state.images
+const mapStateToProps = (state) => ({
+  requestedPhoto: state.images,
 });
-const mapDispatchToProps = dispatch => ({
-  fetchRequestedPhoto: () => dispatch(fetchImages())
+const mapDispatchToProps = (dispatch) => ({
+  fetchRequestedPhoto: () => dispatch(fetchImages()),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Photos);

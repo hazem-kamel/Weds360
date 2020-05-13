@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchCategories } from "../redux/actions/Actions";
-
 const MainStyledCategories = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -32,13 +31,12 @@ const StyledImage = styled.img`
   width: 360px;
   height: 230px;
 `;
-
-const Categories = props => {
+const Categories = (props) => {
   useEffect(() => {
     props.getCategories();
   }, [props.categories.length]);
   const history = useHistory();
-  const navigate = categoryId => {
+  const navigate = (categoryId) => {
     history.push("/category/" + categoryId);
   };
   return (
@@ -65,10 +63,10 @@ const Categories = props => {
     </>
   );
 };
-const mapStateToProps = state => ({
-  categories: state.categories
+const mapStateToProps = (state) => ({
+  categories: state.categories,
 });
-const mapDispatchToProps = dispatch => ({
-  getCategories: () => dispatch(fetchCategories())
+const mapDispatchToProps = (dispatch) => ({
+  getCategories: () => dispatch(fetchCategories()),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);

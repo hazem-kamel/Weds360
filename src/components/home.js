@@ -12,9 +12,10 @@ const StyledHomePageSection = styled.div`
   grid-column-gap: 20px;
   margin-top: 90px;
   max-width: 100;
-  @media (max-width: 767px) {
+  @media (max-width: 1016px) {
     display: grid;
     grid-template-columns: 100%;
+    text-align: center;
   }
 `;
 const StyledGallery = styled.div`
@@ -23,10 +24,13 @@ const StyledGallery = styled.div`
   margin: 0 auto;
   margin-right: 130px;
   cursor: pointer;
-  @media (max-width: 767px) {
-    grid-template-columns: repeat(2, 1fr);
-    margin-right: 30px;
-    margin-left: 30px;
+  @media (max-width: 1016px) {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    img {
+      width: 120px;
+    }
   }
   div {
     margin: 5px;
@@ -40,29 +44,28 @@ const StyledGallery = styled.div`
     text-align: center;
   }
 `;
-const HomePage = props => {
+const HomePage = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(9);
   let LastImageIndex = currentPage * postsPerPage;
   let FirstImageIndex = LastImageIndex - postsPerPage;
   let Rendered = props.images.slice(FirstImageIndex, LastImageIndex);
-  const paginate = number => {
+  const paginate = (number) => {
     setCurrentPage(number);
   };
-  const previousButton = number => {
+  const previousButton = (number) => {
     setCurrentPage(number);
   };
-  const nextButton = number => {
+  const nextButton = (number) => {
     setCurrentPage(number);
   };
   useEffect(() => {
     props.getImages();
   }, [props.images.length]);
   const history = useHistory();
-  const navigate = imageId => {
+  const navigate = (imageId) => {
     history.push("/photo/" + imageId);
   };
-
   return (
     <StyledHomePage>
       <StyledHomePageSection>
@@ -90,10 +93,10 @@ const HomePage = props => {
     </StyledHomePage>
   );
 };
-const mapStateToProps = state => ({
-  images: state.images
+const mapStateToProps = (state) => ({
+  images: state.images,
 });
-const mapDispatchToProps = dispatch => ({
-  getImages: () => dispatch(fetchImages())
+const mapDispatchToProps = (dispatch) => ({
+  getImages: () => dispatch(fetchImages()),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

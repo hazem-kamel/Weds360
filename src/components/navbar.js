@@ -1,34 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-
 const DesktopNavBar = styled.div`
   padding-top: 30px;
   display: flex;
   margin: 0 120px;
   position: relative;
-
-  @media (max-width: 767px) {
+  @media (max-width: 1016px) {
     display: none;
   }
-
   img {
     width: 100px;
     height: 100%;
     margin: 0 20px;
+    cursor: pointer;
   }
 `;
-
 const StyledNav = styled.div`
-  float: left;
   width: 100%;
   height: 100%;
   margin-bottom: 10px;
   display: flex;
   border-top: solid 1px #000;
   border-bottom: solid 1px #000;
-  padding: 0 15px;
-  align-self: flex-end;
-  justify-content: space-between;
   align-items: center;
   font-size: 14px;
   line-height: 1.428571429;
@@ -38,6 +31,7 @@ const StyledNav = styled.div`
     margin: 0 15px;
     white-space: nowrap;
     display: list-item;
+    cursor: pointer;
   }
   li:first-child:hover {
     .dropMenu {
@@ -59,32 +53,67 @@ const StyledDropMenu = styled.div`
 `;
 const StyledDropPlanner = styled.a`
   display: block;
-  text-align: left;
+  text-align: center;
   padding: 10px;
   margin: 10px;
   font-size: 12px;
   font-weight: bold;
   color: Black;
 `;
-
-const HiddenMenu = styled.div`
+const HiddenMenu = styled.button`
   &.HiddenMenu {
     display: none;
+    border: none;
+    cursor: pointer;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 1016px) {
     &.HiddenMenu {
       display: flex;
-      i {
-        width: 30px;
+      position: relative;
+      left: 20px;
+      top: 20px;
+      font-size: 30px;
+      ul {
+        list-style: none;
       }
+      li {
+        border-bottom: 1px solid black;
+        cursor: pointer;
+        text-align: center;
+        font-size: 15px;
+        margin: 20px;
+        position: relative;
+        top: 30px;
+        right: 90px;
+      }
+    }
+    ul {
+      display: ${(props) => (props.clicked ? "block" : "none")};
     }
   }
 `;
-const NavBar = props => {
+const NavBar = (props) => {
+  const [clicked, setClick] = useState(false);
+  console.log(clicked);
   return (
     <>
-      <HiddenMenu className="HiddenMenu">
+      <HiddenMenu
+        clicked={clicked}
+        onClick={(e) => setClick(!clicked)}
+        className="HiddenMenu"
+      >
         <i className="fas fa-bars"></i>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>HER</li>
+          <li>HIM</li>
+          <li>The Wedding</li>
+          <li>VENDORS</li>
+          <li>GALLERY</li>
+          <li>IDEAS&MORE</li>
+        </ul>
       </HiddenMenu>
       <DesktopNavBar>
         <StyledNav>
@@ -107,11 +136,11 @@ const NavBar = props => {
           </ul>
         </StyledNav>
         <img
+          href="/"
           className="logo"
           src="https://weds360.com/assets/logo-a44ab28137d9c6c366386172e63d31ba35dfd616b594a0b39e1f5d45a3130973.png"
           alt="imagee"
         ></img>
-
         <StyledNav>
           <ul>
             <li className="">VENDORS</li>
@@ -123,5 +152,4 @@ const NavBar = props => {
     </>
   );
 };
-
 export default NavBar;

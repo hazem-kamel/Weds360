@@ -8,7 +8,6 @@ const StyledBottom = styled.div`
   @media (max-width: 767px) {
     margin: 20px 30px;
   }
-
   h3 {
     margin: 0;
     text-align: center;
@@ -34,7 +33,6 @@ const StyledBottomSection = styled.div`
   margin-left: auto;
   margin: 30px 0px 25px;
   margin-bottom: 90px;
-
   h3 {
     font-size: 24px;
     margin-bottom: 75px;
@@ -56,7 +54,6 @@ const StyledCards = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   @media (max-width: 767px) {
     margin: 5px;
     padding: 10px;
@@ -111,7 +108,6 @@ const StyledFooter = styled.footer`
   width: 100%;
   background-color: black;
   color: white;
-
   @media (max-width: 767px) {
     margin-top: 10px;
     display: flex;
@@ -122,7 +118,6 @@ const StyledFooter = styled.footer`
     margin-top: 20px;
     padding: 10px;
     bottom: 0px !important;
-
     a {
       margin: 5px;
       font-size: 15px;
@@ -137,7 +132,6 @@ const StyledFooter = styled.footer`
       margin-top: 10px;
     }
   }
-
   .center-footer {
     text-align: center;
     font-size: 10px;
@@ -155,7 +149,6 @@ const StyledFooter = styled.footer`
       margin-top: 0px;
     }
   }
-
   .right-footer {
     text-align: right;
     padding: 30px;
@@ -173,7 +166,6 @@ const StyledFooter = styled.footer`
     }
   }
 `;
-
 const Footer = () => {
   return (
     <>
@@ -188,9 +180,8 @@ const Footer = () => {
               <img
                 src="https://weds360.com/assets/icons/tools-website-95bef8b478b6c85387e84ee788519776163c56e0b019ed23465792a72ca2afc4.png"
                 alt="Wedding Website"
-              ></img>{" "}
+              ></img>
             </StyledImg>
-
             <StyledInfo>
               <h4>WEDDING WEBSITE</h4>
               <p>
@@ -210,7 +201,6 @@ const Footer = () => {
               ></img>
             </StyledImg>
             <StyledInfo>
-              {" "}
               <h4>BUDGETER</h4>
               <p>
                 Do you have a figure in mind? Place it in the budgeter and we
@@ -220,10 +210,8 @@ const Footer = () => {
               <a href="/">Create and manage your budget</a>
             </StyledInfo>
           </StyledCards>
-
           <StyledCards>
             <StyledImg>
-              {" "}
               <img
                 src="https://weds360.com/assets/icons/tools-guestlist-f425f68309d1c60ecfbd742d0c23f6ac6e4c5f06112cc32c7f03cb44e76e46c4.png"
                 alt="Guest List"
@@ -241,7 +229,6 @@ const Footer = () => {
           </StyledCards>
           <StyledCards>
             <StyledImg>
-              {" "}
               <img
                 src="https://weds360.com/assets/icons/tools-checklist-e124e29dd969e38098828647686c96804fe8369a8b09b6d9fc422f9a4e7b5e22.png"
                 alt="Check List"
@@ -258,14 +245,12 @@ const Footer = () => {
           </StyledCards>
           <StyledCards>
             <StyledImg>
-              {" "}
               <img
                 src="https://weds360.com/assets/icons/tools-registry-44ab24a86952730b44ec02ae3405b2665d61471f42a631968093d3613f4f95e8.png"
                 alt="Register List"
               ></img>
             </StyledImg>
             <StyledInfo>
-              {" "}
               <h4>REGISTRY LIST</h4>
               <p>
                 Escape the awkward moments and receiving the same gift twice by
@@ -295,7 +280,6 @@ const Footer = () => {
           </StyledCards>
         </StyledBottomSection>
       </StyledBottom>
-
       <StyledFooter>
         <div className="left-footer">
           <h1>Weds360</h1>
@@ -320,5 +304,4 @@ const Footer = () => {
     </>
   );
 };
-
 export default Footer;
